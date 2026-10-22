@@ -31,3 +31,84 @@ Reported incident counts do not directly represent strike probability because fl
 
 ## Internship
 Completed as part of the SWYNEX Task 1 dataset exploration and preprocessing activity.
+
+# SWYNEX Task 2 — Machine Learning Model Training and Evaluation
+
+## Project Overview
+
+This project focuses on training and evaluating machine learning models using the real-world FAA Wildlife Strike Database as part of Task 2 of the SWYNEX internship.
+
+The project uses the SkyShield aviation safety concept to explore whether wildlife strike damage levels can be predicted from incident-related features.
+
+## Objectives
+
+- Prepare the cleaned dataset for machine learning.
+- Select relevant features and define the target variable.
+- Train at least two machine learning classification models.
+- Evaluate model performance using appropriate metrics.
+- Compare the models and explain their relative performance.
+
+## Dataset
+
+**Source:** FAA Wildlife Strike Database
+
+The dataset contains aviation wildlife strike incident information, including airport, aircraft, operator, phase of flight, wildlife species, incident timing, and damage-related fields.
+
+## Machine Learning Models
+
+### 1. Logistic Regression
+Used as a baseline classification model.
+
+### 2. Random Forest Classifier
+Used to model potentially nonlinear relationships between incident characteristics and damage levels.
+
+## Data Preparation
+
+- Removed records with missing target values.
+- Excluded incident identifiers and outcome-related fields from model predictors.
+- Handled missing feature values using imputation.
+- Encoded categorical variables using One-Hot Encoding.
+- Scaled numerical features for Logistic Regression.
+- Split the data into training and testing sets using stratified sampling.
+
+## Evaluation Metrics
+
+Both models were evaluated using:
+
+- Accuracy
+- Macro Precision
+- Macro Recall
+- Macro F1-score
+- Classification Report
+- Confusion Matrix
+
+Macro F1-score was used to compare performance across damage categories, including less frequent classes.
+
+## Model Comparison
+
+Logistic Regression and Random Forest were evaluated on the same held-out test set. The model with the higher macro F1-score was selected as the leading candidate, while class-wise precision, recall, and confusion matrices were also considered.
+
+Actual evaluation results are documented in `SkyShield_Model_Comparison.csv` and `SkyShield_Best_Model_Report.csv`.
+
+## Files
+
+- `SkyShield_Task2_Model_Training_Evaluation.ipynb` — Model training and evaluation notebook.
+- `SkyShield_Model_Comparison.csv` — Comparison of evaluation metrics.
+- `SkyShield_Best_Model_Report.csv` — Detailed classification report for the selected model.
+- `SkyShield_Best_Model.joblib` — Saved trained model.
+- `SkyShield_Cleaned_Data.csv` — Prepared dataset used for training, if included.
+
+## Technologies Used
+
+Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Jupyter Notebook.
+
+## Conclusion
+
+This task demonstrates a machine learning workflow for aviation wildlife strike damage-level classification. The models were compared using multiple evaluation metrics to identify a promising candidate for further investigation.
+
+The results are experimental and should not be interpreted as validated predictions for operational aviation safety decisions.
+
+## Internship
+
+Completed as part of **Task 2 — Machine Learning Model Training and Evaluation** at **SWYNEX Technologies**.
+
