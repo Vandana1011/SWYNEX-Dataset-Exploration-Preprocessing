@@ -112,3 +112,53 @@ The results are experimental and should not be interpreted as validated predicti
 
 Completed as part of **Task 2 — Machine Learning Model Training and Evaluation** at **SWYNEX Technologies**.
 
+# SkyShield — Model Improvement and Validation
+
+## SWYNEX Internship — Task 3
+
+### Project Overview
+SkyShield analyzes real-world aviation wildlife strike data to explore incident characteristics and predict wildlife strike damage levels using machine learning.
+
+### Objective
+Improve and validate the baseline machine learning model through hyperparameter tuning and cross-validation.
+
+### Dataset
+- **Records:** 358,433 rows in the cleaned dataset
+- **Features:** 14 input features used for modeling
+- **Target:** `DAMAGE_LEVEL`
+- Missing target labels were excluded from model training.
+
+### Methodology
+- Numerical feature imputation and standardization
+- Categorical feature imputation and one-hot encoding
+- Logistic Regression baseline model
+- GridSearchCV with 3-fold Stratified Cross-Validation
+- Macro F1-score used for model selection due to class imbalance
+
+### Model Performance
+
+| Metric | Task 2 Baseline | Task 3 Tuned |
+|---|---:|---:|
+| Accuracy | 0.6669 | 0.6622 |
+| Macro Precision | 0.2710 | 0.2723 |
+| Macro Recall | 0.4327 | 0.4527 |
+| Macro F1-score | 0.2821 | 0.2837 |
+
+### Findings
+The tuned model achieved a small Macro F1 improvement from 0.2821 to 0.2837. Macro Recall improved from 0.4327 to 0.4527, while accuracy decreased slightly.
+
+The results suggest modest improvement in identifying different damage classes. Further feature engineering, alternative models, and class-imbalance experiments could improve performance.
+
+### Limitations
+The target classes are imbalanced, and the model's overall performance remains limited. The model is intended for learning and analysis and is not validated for operational aviation safety decisions.
+
+### Files
+- `SkyShield_Task3_Model_Improvement.ipynb` — Model tuning, validation, evaluation, and findings.
+
+### Tools and Technologies
+Python, Pandas, NumPy, Scikit-learn, Jupyter Notebook, Matplotlib.
+
+### Internship
+Completed as part of the SWYNEX internship Task 3.
+
+
